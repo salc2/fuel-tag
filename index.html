@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://polygit.org/webcomponentsjs+1.0.0-rc.5/components/webcomponentsjs/webcomponents-loader.js"></script>
+	<link rel="import" href="fuel-tag.html">
+</head>
+<body>
+
+
+	<script type="text/javascript">
+
+		(function(){
+			for(var i=0; i< 10; i++){
+			var fuel_tag = document.createElement("fuel-tag");
+			document.body.appendChild(fuel_tag);
+		}
+
+		setInterval(()=>{
+			document.querySelectorAll('fuel-tag').forEach( (tag) => {
+				tag.setValueFuel(getRandomArbitrary(0,100));
+			} )
+		},200);
+
+		function getRandomArbitrary(min, max) {
+			return Math.floor(Math.random() * (max - min)) + min;
+		}
+		})();
+	</script>
+</body>
+</html>

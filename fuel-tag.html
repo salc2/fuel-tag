@@ -67,13 +67,10 @@ id="empty" />
 </template>
 
 <script>
-  // Define the class for a new element called custom-element
   class FuelTag extends Polymer.Element {
     static get is() { return "fuel-tag"; }
     constructor() {
       super();
-        //this.textContent = "I'm a custom-element.";
-        console.log(this.$.middle)
       }
       setValueFuel(val){
        this.$.empty.setAttribute("visibility","hidden");
@@ -82,21 +79,20 @@ id="empty" />
        this.$.middle.setAttribute("visibility","hidden");
        this.$.needle_middle.setAttribute("visibility","hidden");
 
-        this.$.full.setAttribute("visibility","hidden");
-        this.$.needle_full.setAttribute("visibility","hidden");
-        if(val >= 80){
-          this.$.full.setAttribute("visibility","show");
-         this.$.needle_full.setAttribute("visibility","show");
-       }else if(val >= 30){
-         this.$.middle.setAttribute("visibility","show");
-         this.$.needle_middle.setAttribute("visibility","show");
-       }else{
-         this.$.empty.setAttribute("visibility","show");
-         this.$.needle_empty.setAttribute("visibility","show");
-      }
-    }
-  }
-  // Register the new element with the browser
+       this.$.full.setAttribute("visibility","hidden");
+       this.$.needle_full.setAttribute("visibility","hidden");
+       if(val >= 80){
+        this.$.full.setAttribute("visibility","show");
+        this.$.needle_full.setAttribute("visibility","show");
+      }else if(val >= 30){
+       this.$.middle.setAttribute("visibility","show");
+       this.$.needle_middle.setAttribute("visibility","show");
+     }else{
+       this.$.empty.setAttribute("visibility","show");
+       this.$.needle_empty.setAttribute("visibility","show");
+     }
+   }
+ }
   customElements.define(FuelTag.is, FuelTag);
 </script>
 </dom-module>
